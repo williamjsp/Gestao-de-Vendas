@@ -1,0 +1,76 @@
+class Produto:
+    def __init__(self, nome, codigo, preco, quantidade):
+        self.__nome = nome
+        self.__codigo = codigo
+        self.__preco = preco
+        self.__quantidade = quantidade
+
+    def get_nome(self):
+        return self.__nome
+
+    def get_codigo(self):
+        return self.__codigo
+
+    def get_preco(self):
+        return self.__preco
+
+    def get_quantidade(self):
+        return self.__quantidade
+
+    def definir_quantidade(self, quantidade):
+        self.__quantidade = quantidade
+
+class Eletronico(Produto):
+    def __init__(self, nome, codigo, preco, quantidade, marca):
+        super().__init__(nome, codigo, preco, quantidade)
+        self.__marca = marca
+
+    def get_marca(self):
+        return self.__marca
+
+class Roupa(Produto):
+    def __init__(self, nome, codigo, preco, quantidade, tamanho):
+        super().__init__(nome, codigo, preco, quantidade)
+        self.__tamanho = tamanho
+
+    def get_tamanho(self):
+        return self.__tamanho
+
+class Alimento(Produto):
+    def __init__(self, nome, codigo, preco, quantidade, data_validade):
+        super().__init__(nome, codigo, preco, quantidade)
+        self.__data_validade = data_validade
+
+    def get_data_validade(self):
+        return self.__data_validade
+class Cliente:
+    def __init__(self, nome, id):
+        self.__nome = nome
+        self.__id = id
+        self.__historico_compras = []
+
+    def get_nome(self):
+        return self.__nome
+
+    def get_id(self):
+        return self.__id
+
+    def get_historico_compras(self):
+        return self.__historico_compras
+
+    def add_compra(self, venda):
+        self.__historico_compras.append(venda)
+class Venda:
+    def __init__(self, data, itens_vendidos, valor_total):
+        self.__data = data
+        self.__itens_vendidos = itens_vendidos
+        self.__valor_total = valor_total
+
+    def get_data(self):
+        return self.__data
+
+    def get_itens_vendidos(self):
+        return self.__itens_vendidos
+
+    def get_valor_total(self):
+        return self.__valor_total
